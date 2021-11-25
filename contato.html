@@ -24,17 +24,17 @@
     <div class="container ml50">
         <div class="ml50">
             <form>
-                <label for="nome">Nome</label> <br>
-                <input type="nome" id="nome">
+                <label for="nome">Nome:</label> <br>
+                <input type="nome" id="nome" onkeyup='validarNome()'>
+                <div id='txtNome'></div>
                 <br>
+                <label for="email">Email:</label> <br>
+                <input type="email" id="email" onkeyup='validarEmail()'>
+                <div id='txtEmail'></div>
                 <br>
-                <label for="email">Email</label> <br>
-                <input type="email" id="email">
-                <br>
-                <br>
-                <label for="assunto">Assunto</label> <br>
-                <textarea name="assunto" id="assunto" cols="30" rows="10"></textarea>
-                <br>
+                <label for="assunto">Assunto:</label> <br>
+                <textarea name="assunto" id="assunto" cols="60" rows="5" onkeyup='validarAssunto()'></textarea>
+                <div id='txtAssunto'></div>
                 <br>
                 <button>Enviar</button>
 
@@ -42,15 +42,15 @@
         </div>
 
         <div class="ml50">
-            <p>74 Lower Creek Trail</p>
-            <p>Senoia, GA 30276, EUA</p>
+
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1426
                 .3938097526006!2d-84.55725104200162!3d33.2987990370468!2m3!1f0!2f0!3f0!3m2
                 !1i1024!2i768!4f13.1!3m3!1m2!1s0x88f494dd099585c3%3A0x5b7827c2fff9ab9e!2s74%20
                 Lower%20Creek%20Trail%2C%20Senoia%2C%20GA%2030276%2C%20EUA!5e1!3m2!1spt-BR!2sb
                 r!4v1637776031035!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen=""
                 loading="lazy"></iframe>
-
+            <p>74 Lower Creek Trail</p>
+            <p>Senoia, GA 30276, EUA</p>
         </div>
     </div>
 
@@ -61,5 +61,7 @@
         </p>
     </footer>
 </body>
+
+<script src="assets/js/script.js"> </script>
 
 </html>
