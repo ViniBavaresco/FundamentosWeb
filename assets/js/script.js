@@ -1,39 +1,65 @@
 let nome = window.document.getElementById('nome')
 let email = document.querySelector('#email')
 let assunto = document.querySelector('#assunto')
+let nomeOk = false
+let emailOk = false
+let assuntoOk = false
+let mapa = document.querySelector('#mapa')
 
-nome.style.width = '50%'
-email.style.width = '100%'
+nome.style.width = '60%'
+email.style.width = '60%'
+assunto.style.width = '80%'
 
 function validarNome() {
     let txtNome = document.querySelector('#txtNome')
-    if (nome.value.length < 3) {
-        txtNome.innerHTML='Campo Inválido'
-        txtNome.style.color='red'
-    }else{
-        txtNome.innerHTML='Campo Válido'
-        txtNome.style.color='green'
+    if (nome.value.length < 3 || nome.value.indexOf(' ') == -1) {
+        txtNome.innerHTML = '*Campo Inválido'
+        txtNome.style.color = 'red'
+    } else {
+        txtNome.innerHTML = 'Ok'
+        txtNome.style.color = 'green'
+        nomeOk = true
     }
 }
 
 function validarEmail() {
     let txtEmail = document.querySelector('#txtEmail')
     if (email.value.indexOf('@') == -1 || email.value.indexOf('.') == -1) {
-        txtEmail.innerHTML='Campo Inválido'
-        txtEmail.style.color='red'
-    }else{
-        txtEmail.innerHTML='Campo Válido'
-        txtEmail.style.color='green'
+        txtEmail.innerHTML = '*Campo Inválido'
+        txtEmail.style.color = 'red'
+    } else {
+        txtEmail.innerHTML = 'Ok'
+        txtEmail.style.color = 'green'
+        emailOk = true
     }
 }
 
 function validarAssunto() {
     let txtAssunto = document.querySelector('#txtAssunto')
-    if (assunto.value.length < 3) {
-        txtAssunto.innerHTML='Campo Inválido'
-        txtAssunto.style.color='red'
-    }else{
-        txtAssunto.innerHTML='Campo Válido'
-        txtAssunto.style.color='green'
+    if (assunto.value.length >= 200) {
+        txtAssunto.innerHTML = 'Campo inválido, o texto deve conter até 200 caracteres'
+        txtAssunto.style.color = 'red'
+        txtAssunto.style.display = 'block'
+    } else {
+        txtAssunto.style.display = 'none'
+        assuntoOk = true
     }
+}
+
+function enviar() {
+    if (nomeOk == true && emailOk == true && assuntoOk == true) {
+        alert('Formulário enviado com sucesso!')
+    } else {
+        alert('Preencha todos os campos corretamente antes de enviar!')
+    }
+}
+
+function mapaZoom() {
+    mapa.style.width = '600px'
+    mapa.style.height = '450px'
+}
+
+function mapaNormal() {
+    mapa.style.width = '400px'
+    mapa.style.height = '300px'
 }

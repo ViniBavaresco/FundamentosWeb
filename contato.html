@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class="backgroud">
+<body class="background">
     <ul class="inicio" id="menu">
         <li>
             <a href="index.html">Home</a>
@@ -24,7 +24,7 @@
     <div class="container ml50">
         <div class="ml50">
             <form>
-                <label for="nome">Nome:</label> <br>
+                <label for="nome">Nome completo:</label> <br>
                 <input type="nome" id="nome" onkeyup='validarNome()'>
                 <div id='txtNome'></div>
                 <br>
@@ -33,10 +33,10 @@
                 <div id='txtEmail'></div>
                 <br>
                 <label for="assunto">Assunto:</label> <br>
-                <textarea name="assunto" id="assunto" cols="60" rows="5" onkeyup='validarAssunto()'></textarea>
+                <textarea name="assunto" id="assunto" cols="50" rows="7" onkeydown='validarAssunto()'></textarea>
                 <div id='txtAssunto'></div>
                 <br>
-                <button>Enviar</button>
+                <button onclick="enviar()">Enviar</button>
 
             </form>
         </div>
@@ -48,9 +48,9 @@
                 !1i1024!2i768!4f13.1!3m3!1m2!1s0x88f494dd099585c3%3A0x5b7827c2fff9ab9e!2s74%20
                 Lower%20Creek%20Trail%2C%20Senoia%2C%20GA%2030276%2C%20EUA!5e1!3m2!1spt-BR!2sb
                 r!4v1637776031035!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen=""
-                loading="lazy"></iframe>
-            <p>74 Lower Creek Trail</p>
-            <p>Senoia, GA 30276, EUA</p>
+                loading="lazy" onmousemove="mapaZoom()" onmouseout="mapaNormal()" id="mapa"></iframe>
+            <p>74 Lower Creek Trail - Senoia, GA 30276, EUA</p>
+            <p>Nosso email: thekingdom@email.com.br</p>
         </div>
     </div>
 
